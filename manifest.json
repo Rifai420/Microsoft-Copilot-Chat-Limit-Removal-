@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Copilot Chat No Characters limit",
+  "version": "1.0.1",
+  "description": "MicroSoft Copilot Chat Remove Characters Limit",
+  "permissions": ["activeTab"],
+  "action": {
+    "default_icon": "/src//icons/icon.png",
+	"default_popup": "/src/popup.html"
+  },
+  "icons": {
+    "128": "/src/icons/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.bing.com/search?*",
+        "https://copilot.microsoft.com/*",
+        "https://www.bing.com/chat?*",
+        "https://www.bing.com/chat*"
+      ],
+      "js": ["/src/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
